@@ -13,9 +13,9 @@ const Home = () => {
 
   //todo: Requerimientos
   const items = {
-    frog: ["brr", "birip", "brrah", "croac"],
-    dragonFly: ["fiu", "plop", "pep"],
-    cricket: ["cric-cric", "trri-trri", "bri-bri"],
+    frog: ["brr_", "birip_", "brrah_", "croac_"],
+    dragonFly: ["fiu_", "plop_", "pep_"],
+    cricket: ["cric-cric_", "trri-trri_", "bri-bri_"],
   };
 
   const songs = [
@@ -80,7 +80,7 @@ const Home = () => {
           <input type="submit" className="btn btn-success" />
         </div>
       </form>
-      <div className="text-center p-3">
+      <div className="text-center p-3 content-response">
         <p>{phrase}</p>
       </div>
     </div>
