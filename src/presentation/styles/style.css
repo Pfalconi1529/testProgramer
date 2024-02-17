@@ -1,11 +1,6 @@
 body {
-  background: linear-gradient(
-    90deg,
-    rgb(26, 24, 24) 0%,
-    rgba(141, 29, 221, 1) 100%
-  );
+  box-sizing: border-box;
 }
-
 .content-link {
   width: calc(100% - 20%);
   text-align: center;
