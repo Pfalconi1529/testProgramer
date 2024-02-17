@@ -46,7 +46,7 @@ const FrontEnd = () => {
               </button>
             </div>
           </div>
-          <table className="table table-responsive-lg ">
+          <table className="table table-responsive-lg   ">
             <thead>
               <tr>
                 <th scope="col">

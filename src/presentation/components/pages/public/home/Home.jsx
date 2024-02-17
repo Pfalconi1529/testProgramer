@@ -38,14 +38,12 @@ const Home = () => {
     const remainingSounds = searchSoundInSounds(soundSearch);
     setPhrase(
       remainingSounds.length > 0
-        ? `Cuando nos da ${soundSearch}, debe reproducir: ${remainingSounds.join(
-            "  "
-          )}`
-        : `Cuando nos da ${remainingSounds}, no debería reproducir nada según todas las canciones.`
+        ? `Sonido ${soundSearch}, Canción: ${remainingSounds.join("  ")}`
+        : `Sonido ${remainingSounds}, silencio`
     );
   }
 
-  //todo:Busca sonido en la canción
+  //todo:Busca el sonido en la canción
   function searchSoundInSounds(sound) {
     for (const song of songs) {
       const indice = handlePhrase(sound, song);
@@ -53,13 +51,14 @@ const Home = () => {
         return song.slice(indice + 1);
       }
     }
-
     return [];
   }
 
   return (
     <div className="form-group container col-4 my-3 ">
-      <Details items={items} songs={songs} />
+      <div className="question-content">
+        <Details items={items} songs={songs} />
+      </div>
       <form onSubmit={searchSound}>
         <div className="form-group">
           <input
@@ -76,7 +75,8 @@ const Home = () => {
         </div>
       </form>
       <div className="text-center p-3 content-response">
-        <p>{phrase}</p>
+        <h4 className="text-danger-emphasis">Respuesta</h4>
+        {phrase && <p>{phrase}</p>}
       </div>
     </div>
   );
