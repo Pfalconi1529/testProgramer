@@ -28,7 +28,7 @@ const FrontEnd = () => {
     <div className="container-table">
       <div className="content">
         <div className="container">
-          <div className="content-button">
+          <div className="content-button  ">
             <span>Freelancers (50)</span>
             <div>
               <button className="btn btn-outline-primary bi bi-envelope ">
