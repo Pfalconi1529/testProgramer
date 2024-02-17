@@ -6,6 +6,7 @@
 
 import { useState } from "react";
 import "../../../../styles/style.css";
+import Details from "../../../molecules/details/Details";
 
 const Home = () => {
   const [phrase, setPhrase] = useState("");
@@ -13,11 +14,12 @@ const Home = () => {
 
   //todo: Requerimientos
   const items = {
-    frog: ["brr_", "birip_", "brrah_", "croac_"],
-    dragonFly: ["fiu_", "plop_", "pep_"],
-    cricket: ["cric-cric_", "trri-trri_", "bri-bri_"],
+    frog: ["brr", "birip", "brrah", "croac"],
+    dragonFly: ["fiu", "plop", "pep"],
+    cricket: ["cric-cric", "trri-trri", "bri-bri"],
   };
 
+  //todo: Array de canciones
   const songs = [
     ["brr", "fiu", "cric-cric", "brrah"],
     ["pep", "birip", "trri-trri", "croac"],
@@ -36,8 +38,8 @@ const Home = () => {
     const remainingSounds = searchSoundInSounds(soundSearch);
     setPhrase(
       remainingSounds.length > 0
-        ? `Cuando nos da ${remainingSounds}, debe reproducir: ${remainingSounds.join(
-            ", "
+        ? `Cuando nos da ${soundSearch}, debe reproducir: ${remainingSounds.join(
+            "  "
           )}`
         : `Cuando nos da ${remainingSounds}, no debería reproducir nada según todas las canciones.`
     );
@@ -56,15 +58,8 @@ const Home = () => {
   }
 
   return (
-    <div className="form-group container col-2 my-3 ">
-      <div>
-        <h1 className="text-center">Canciones</h1>
-        <ul>
-          <li>Rana: {items.frog}</li>
-          <li>Libélula: {items.dragonFly}</li>
-          <li>Grillo: {items.cricket}</li>
-        </ul>
-      </div>
+    <div className="form-group container col-4 my-3 ">
+      <Details items={items} songs={songs} />
       <form onSubmit={searchSound}>
         <div className="form-group">
           <input
