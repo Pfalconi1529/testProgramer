@@ -13,18 +13,9 @@ const Home = () => {
 
   //todo: Requerimientos
   const items = {
-    item1: [
-      "Cuando se le da brr debe reproducir fiu, cric-cric, brrah de acuerdo con la primera canción",
-    ],
-    item2: [
-      " Cuando se le da birip, debe reproducir trri-trri, croac según la segunda canción.",
-    ],
-    item3: [
-      "Cuando se le da plop debe reproducir cric-cric, brrah de acuerdo con la tercera canción.",
-    ],
-    item4: [
-      " Cuando se le da croac o brrah, no debería reproducir nada de acuerdo con todas las canciones.",
-    ],
+    frog: ["brr", "birip", "brrah", "croac"],
+    dragonFly: ["fiu", "plop", "pep"],
+    cricket: ["cric-cric", "trri-trri", "bri-bri"],
   };
 
   const songs = [
@@ -33,7 +24,7 @@ const Home = () => {
     ["bri-bri", "plop", "cric-cric", "brrah"],
   ];
 
-  //todo: Buscamos el indice de una canción 
+  //todo: Buscamos el indice de una canción
   function handlePhrase(sound, song) {
     return song.indexOf(sound);
   }
@@ -69,10 +60,9 @@ const Home = () => {
       <div>
         <h1 className="text-center">Canciones</h1>
         <ul>
-          <li>{items.item1}</li>
-          <li>{items.item2}</li>
-          <li>{items.item3}</li>
-          <li>{items.item4}</li>
+          <li>Rana: {items.frog}</li>
+          <li>Libélula: {items.dragonFly}</li>
+          <li>Grillo: {items.cricket}</li>
         </ul>
       </div>
       <form onSubmit={searchSound}>
@@ -82,7 +72,7 @@ const Home = () => {
             name="phrase"
             type="text"
             className="form-control"
-            value={inputValue} 
+            value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
           />
         </div>
